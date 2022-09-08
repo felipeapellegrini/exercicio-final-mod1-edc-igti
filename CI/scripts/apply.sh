@@ -9,13 +9,13 @@ export AWS_CSM_HOST=127.0.0.1
 
 cd infra/aws/
 
-(iamlive --output-file './policy.json' > /dev/null &)
+# (iamlive --output-file './policy.json' > /dev/null &)
 
 terraform init
 terraform workspace select $1 || terraform workspace new $1
 terraform apply $2
 
-pkill iamlive
+# pkill iamlive
 
 sleep 1
 echo ""

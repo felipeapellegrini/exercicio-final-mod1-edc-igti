@@ -24,7 +24,7 @@ jobs:
       - name: terraform apply
         run: |
           chmod -R +x ./CI/scripts
-          ./CI/scripts/apply.sh staging -auto-approve
+          ./CI/scripts/apply.sh stg -auto-approve
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
