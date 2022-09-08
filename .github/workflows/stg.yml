@@ -8,7 +8,7 @@ jobs:
   prod_plan:
     name: Staging Plan
     runs-on: ubuntu-latest
-    container: ronya3data/rony-ci:0.0.1-terraform1.0.3
+    #container: ronya3data/rony-ci:0.0.1-terraform1.0.3
 
     steps:
     - uses: actions/checkout@v2
