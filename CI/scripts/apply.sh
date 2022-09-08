@@ -17,12 +17,12 @@ terraform apply $2
 
 # pkill iamlive
 
-sleep 1
-echo ""
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
-echo -e "${GREEN}PERMISSIONS USED:${NC}"
-cat ./policy.json
+# sleep 1
+# echo ""
+# GREEN='\033[0;32m'
+# NC='\033[0m' # No Color
+# echo -e "${GREEN}PERMISSIONS USED:${NC}"
+# cat ./policy.json
 
 cd ../..
 
