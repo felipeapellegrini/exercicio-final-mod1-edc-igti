@@ -5,7 +5,7 @@ on:
     branches:  [staging]
 
 jobs:
-  prod_plan:
+  stg_plan:
     name: Staging Plan
     runs-on: ubuntu-latest
     #container: ronya3data/rony-ci:0.0.1-terraform1.0.3
@@ -16,6 +16,18 @@ jobs:
       run: |
         chmod -R +x ./CI/scripts
         ./CI/scripts/plan.sh stg
+
+  stg_apply:
+    name: Staging Apply
+    needs: stg_plan
+    runs-on: ubuntu-latest
+    container: ronya3data/rony-ci:0.0.1-terraform1.0.3
+    steps:
+      - uses: actions/checkout@v2
+      - name: terraform apply
+        run: |
+          chmod -R +x ./CI/scripts
+          ./CI/scripts/apply.sh staging -auto-approve
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
