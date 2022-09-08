@@ -6,12 +6,13 @@ on:
 
 jobs:
   prod_plan:
-    name: Production Plan
+    name: Staging Plan
     runs-on: ubuntu-latest
     container: ronya3data/rony-ci:0.0.1-terraform1.0.3
+
     steps:
-      - uses: actions/checkout@v2
-      - name: terraform plan
+    - uses: actions/checkout@v2
+    - name: terraform plan
       run: |
         chmod -R +x ./CI/scripts
         ./CI/scripts/plan.sh stg
