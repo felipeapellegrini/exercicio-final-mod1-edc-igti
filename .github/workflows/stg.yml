@@ -16,3 +16,7 @@ jobs:
       run: |
         chmod -R +x ./CI/scripts
         ./CI/scripts/plan.sh stg
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY_ID }}
