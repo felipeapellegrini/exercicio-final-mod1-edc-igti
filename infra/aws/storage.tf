@@ -4,14 +4,3 @@ resource "aws_s3_bucket" "buckets" {
 
   tags = local.common_tags
 }
-
-resource "null_resource" "fn_example_script" {
-  triggers = {
-    "always_run" = timestamp()
-  }
-
-  provisioner "local-exec" {
-    command = "zip -rj ../../functions/fn_extract_rais.zip ../../functions/fn_extract_rais"
-  }
-
-}
